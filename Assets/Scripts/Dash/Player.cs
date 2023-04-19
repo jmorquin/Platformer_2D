@@ -195,7 +195,11 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         animController.SetBool("Jumping", false);
-        IsGrounded = true;
+        if (collision.gameObject.layer == 7)
+        {
+            IsGrounded = true;
+        }
+        
         CountJump = 2; //reset double saut quand on touche le sol
     }
 
