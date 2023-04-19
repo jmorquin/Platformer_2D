@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
         // le joueur commence avec toute sa vie
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+
     }
 
     // Update is called once per frame
@@ -28,6 +30,10 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(20);
+        }
+        if (currentHealth < 0)
+        {
+            Destroy(gameObject);
         }
     }
 
