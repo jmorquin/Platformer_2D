@@ -20,15 +20,20 @@ public class DeathZone : MonoBehaviour
         if (collision.CompareTag("Player")) 
         
         {
-            StartCoroutine(ReplacePlayer(collision)); 
+            StartCoroutine(ReplacePlayer(collision));
+            fadeSysteme.SetBool("FadeIn",true);
+            fadeSysteme.SetBool("respawn", false);
+
         }
     }
 
     private IEnumerator ReplacePlayer(Collider2D collision) 
     
     {
-        fadeSysteme.SetTrigger("FadeIn");
+        
         yield return new WaitForSeconds(1f); 
         collision.transform.position = PlayerSpawn.position;
+        fadeSysteme.SetBool("respawn", true);
+        fadeSysteme.SetBool("FadeIn", false);
     }
 }
