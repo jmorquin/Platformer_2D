@@ -16,6 +16,7 @@ public class Checkpoint : MonoBehaviour
             
         {
             playerspawn.position = transform.position;
+            Destroy(gameObject);
         }
     }
 
