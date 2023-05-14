@@ -8,6 +8,11 @@ public class PlayerHealth : MonoBehaviour
     public bool isInvincible = false;
     public SpriteRenderer graphics;
     public float invincibilityFlashDelay = 0.2f;
+    public float CoolDown = 1f;
+
+    private Rigidbody2D Rb; 
+
+    private Transform PlayerSpawn;
 
     public BarreDeVie healthBar;
 
@@ -20,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
+        Rb = GetComponent<Rigidbody2D>();
 
     }
 
@@ -33,10 +39,23 @@ public class PlayerHealth : MonoBehaviour
         }
         if (currentHealth < 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(Respawn());
+           
         }
     }
 
+    public IEnumerator Respawn()
+        
+       {
+        graphics.enabled = false;
+        Rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        yield return new WaitForSeconds(CoolDown);
+        PlayerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
+        transform.position = PlayerSpawn.position;
+        Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        graphics.enabled = true;
+        currentHealth = maxHealth;
+    }
     public void TakeDamage (int damage)
     {
         if(!isInvincible)
