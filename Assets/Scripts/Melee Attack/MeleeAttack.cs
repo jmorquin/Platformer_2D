@@ -23,7 +23,7 @@ public class MeleeAttack : MonoBehaviour
         if (timeBtwAttack >= 0)
         
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetButtonDown("Fire1"))
                 
             {
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position,attackRange,whatIsEnemies);

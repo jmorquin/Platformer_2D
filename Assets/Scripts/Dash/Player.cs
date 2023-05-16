@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
             Vector2 direction = new Vector2(horizontal, vertical).normalized;
 
             // Si le joueur appuie sur la touche de dash et que la direction est valide
-            if (Input.GetKeyDown(KeyCode.LeftShift) && direction != Vector2.zero)
+            if (Input.GetButtonDown("Dash") && direction != Vector2.zero)
             {
                 // Normaliser la direction pour éviter les déplacements excessifs en diagonale
                 if (direction.magnitude > 1f)
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetButtonUp("Dash"))
         {
             tr.emitting = false;
         }
@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
         animController.SetFloat("Speed", Mathf.Abs(horizontal_value));
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && CountJump > 0)
+        if (Input.GetButtonDown("Jump") && CountJump > 0)
         {
             Jump();
 
