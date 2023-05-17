@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+    [SerializeField] int Dommage;
 
 
     // Start is called before the first frame update
@@ -25,11 +26,16 @@ public class BulletScript : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-
-
+        if (collision.gameObject.CompareTag("Enemy") == true)
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(Dommage);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
