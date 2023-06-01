@@ -6,6 +6,8 @@ public class Climb : MonoBehaviour
     private float speed = 8f;
     private bool isMur;
     private bool isClimbing;
+    
+
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -25,10 +27,12 @@ public class Climb : MonoBehaviour
         {
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+            
         }
         else
         {
-            rb.gravityScale = 4f;
+            rb.gravityScale = 4f; 
+            
         }
     }
 
@@ -46,6 +50,7 @@ public class Climb : MonoBehaviour
         {
             isMur = false;
             isClimbing = false;
+           
         }
     }
 }
