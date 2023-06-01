@@ -20,6 +20,7 @@ public class DeathZone : MonoBehaviour
         if (collision.CompareTag("Player")) 
         
         {
+            Debug.Log("Mort");
             StartCoroutine(ReplacePlayer(collision));
             fadeSysteme.SetBool("FadeIn",true);
             fadeSysteme.SetBool("respawn", false);
