@@ -600,6 +600,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8370292127498055700, guid: 53307afb2ca1a664285db3627a684ec5, type: 3}
   m_PrefabInstance: {fileID: 8370292127881521032}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &694507421
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694507420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ed92c10548f6e14cafe4684eb793a64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &732474121
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,7 +974,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -9.382675, y: -0.15599835}
+  m_Offset: {x: -9.382675, y: 0.28695536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -965,7 +985,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 91.37465, y: 7.217105}
+  m_Size: {x: 91.37465, y: 8.103012}
   m_EdgeRadius: 0
 --- !u!212 &1253878624
 SpriteRenderer:
@@ -2220,7 +2240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749633470405563832, guid: 59e82a894a6db5d4382df1682c9d32bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 5749633470405563832, guid: 59e82a894a6db5d4382df1682c9d32bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2618,7 +2638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8370292127498055702, guid: 53307afb2ca1a664285db3627a684ec5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 8370292127498055702, guid: 53307afb2ca1a664285db3627a684ec5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2656,5 +2676,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1450390828046923040}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8370292127498055724, guid: 53307afb2ca1a664285db3627a684ec5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 53307afb2ca1a664285db3627a684ec5, type: 3}
