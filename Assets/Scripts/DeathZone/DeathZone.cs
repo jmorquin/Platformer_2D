@@ -4,12 +4,12 @@ using System.Collections;
 public class DeathZone : MonoBehaviour
 {
     private Transform PlayerSpawn;
-    private Animator fadeSysteme; 
+    private Animator fadeSystem; 
 
     private void Awake()
     {
         PlayerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
-        fadeSysteme = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
+        fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
 
 
     }
@@ -22,8 +22,8 @@ public class DeathZone : MonoBehaviour
         {
             Debug.Log("Mort");
             StartCoroutine(ReplacePlayer(collision));
-            fadeSysteme.SetBool("FadeIn",true);
-            fadeSysteme.SetBool("respawn", false);
+            fadeSystem.SetBool("FadeIn",true);
+            fadeSystem.SetBool("respawn", false);
 
         }
     }
@@ -34,7 +34,7 @@ public class DeathZone : MonoBehaviour
         
         yield return new WaitForSeconds(1f); 
         collision.transform.position = PlayerSpawn.position;
-        fadeSysteme.SetBool("respawn", true);
-        fadeSysteme.SetBool("FadeIn", false);
+        fadeSystem.SetBool("respawn", true);
+        fadeSystem.SetBool("FadeIn", false);
     }
 }
