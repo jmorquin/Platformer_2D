@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioClip[] playliste;
     public AudioSource audioSource;
+    private int musicIndex = 0;
 
        
     // Start is called before the first frame update
@@ -18,6 +19,18 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!audioSource.isPlaying ) 
+        
+        {
+            PlayNextSong();
+        }
         
     }
+    void PlayNextSong()
+    {
+        musicIndex = (musicIndex + 1) % playliste.Length;
+        audioSource.clip = playliste[musicIndex];
+        audioSource.Play();
+    }
+
 }
