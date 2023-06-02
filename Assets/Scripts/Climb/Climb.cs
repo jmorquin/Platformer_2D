@@ -18,6 +18,7 @@ public class Climb : MonoBehaviour
         if (isMur && Mathf.Abs(vertical) > 0f)
         {
             isClimbing = true;
+            GameObject.Find("Player").GetComponent<Animator>().SetBool("Climbing", true);
         }
     }
 
@@ -25,22 +26,27 @@ public class Climb : MonoBehaviour
     {
         if (isClimbing)
         {
+            GameObject.Find("Player").GetComponent<Animator>().SetBool("Climbing", true);
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
             
         }
         else
         {
-            rb.gravityScale = 4f; 
-            
+            rb.gravityScale = 4f;
+            GameObject.Find("Player").GetComponent<Animator>().SetBool("Climbing", false);
+
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Mur"))
-        {
+        { 
+            GameObject.Find("Player").GetComponent<Animator>().SetBool("Climbing", true);
             isMur = true;
+           
+
         }
     }
 
@@ -48,9 +54,11 @@ public class Climb : MonoBehaviour
     {
         if (collision.CompareTag("Mur"))
         {
+            GameObject.Find("Player").GetComponent<Animator>().SetBool("Climbing", false);
             isMur = false;
             isClimbing = false;
-           
+            
+
         }
     }
 }

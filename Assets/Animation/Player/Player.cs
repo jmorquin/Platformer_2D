@@ -121,6 +121,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && CountJump > 0)
         {
+            animController.SetTrigger("Jump");
             Jump();
 
         }
@@ -131,7 +132,7 @@ public class Player : MonoBehaviour
             if (Input.GetButtonDown("Jump") && can_jump)
             {
                 is_jumping = true;
-                animController.SetBool("Jumping", true);
+                //animController.SetBool("Jumping", true);
             }
 
             
@@ -190,16 +191,17 @@ public class Player : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        animController.SetBool("Jumping", false);
+        //animController.SetBool("Jumping", false);
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        animController.SetBool("Jumping", false);
+        //animController.SetBool("Jumping", false);
         if (collision.gameObject.layer == 7)
         {
             IsGrounded = true;
+            animController.SetBool("Grounded", true);
         }
         
         CountJump = 2; //reset double saut quand on touche le sol
@@ -207,8 +209,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        animController.SetBool("Jumping", true);
+        //animController.SetBool("Jumping", true);
         IsGrounded = false;
+        animController.SetBool("Grounded", false);
     }
     
 
