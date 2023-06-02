@@ -55,6 +55,9 @@ public class Enemy : MonoBehaviour
             destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
             graphics.flipX = !graphics.flipX;
+
+            
+
         }
     }
 
