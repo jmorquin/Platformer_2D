@@ -26,6 +26,7 @@ public class MeleeAttack : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
                 
             {
+                GameObject.Find("Player").GetComponent<Animator>().SetBool("Attack",true);
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position,attackRange,whatIsEnemies);
                 for(int i = 0; i<enemiesToDamage.Length; i++) 
                 
@@ -37,8 +38,10 @@ public class MeleeAttack : MonoBehaviour
 
         else 
         
-        { 
+        {
+            GameObject.Find("Player").GetComponent<Animator>().SetBool("Attack", false);
             timeBtwAttack -= Time.deltaTime;
+            
         }
     }
 
