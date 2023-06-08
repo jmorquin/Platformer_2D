@@ -1451,6 +1451,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1540284834275510676, guid: 044c5e961c220be45b5c8fa0aa1cad02, type: 3}
+      propertyPath: smoothing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540284834275510676, guid: 044c5e961c220be45b5c8fa0aa1cad02, type: 3}
       propertyPath: backgrounds.Array.size
       value: 1
       objectReference: {fileID: 0}
